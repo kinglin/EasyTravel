@@ -51,10 +51,6 @@ public class PushTreasureService extends Service{
 		this.context=this;
 		Log.d("myservice", "hit service"); 
 
-
-
-
-
 		manager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		provider=getLocationProvider(manager);
 		
@@ -62,20 +58,14 @@ public class PushTreasureService extends Service{
 
 			@Override
 			public void onStatusChanged(String provider, int status, Bundle extras) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void onProviderEnabled(String provider) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void onProviderDisabled(String provider) {
-				// TODO Auto-generated method stub
-
 			}
 
 			@Override
@@ -90,29 +80,17 @@ public class PushTreasureService extends Service{
 						Log.d("Treasure" ,  "no treasure found surroundly！ "   ); 
 					}else{
 						//执行推送通知操作
-
-
 						changeIsChecked(list);
 						//展示通知栏
 						showNotification(list);
-
 						Log.d("Treasure" ,  "You Have Found A Treasure!" + list.get(0).getContent() + "Have A Look!！ "   ); 
-
 					}
-
-
-
 				}
 				else{
 					Log.d("SuperMap" ,  "Location null "   ); 
 				}  
-
-
 			}
-
-
 		};
-
 
 		Log.d("myservice", "onClick: create service"); 
 
@@ -241,24 +219,17 @@ public class PushTreasureService extends Service{
 	@Override
 	public void onStart(Intent intent, int startId) {
 		if(provider==null){  
-
 			Log.i("PROVIDER ERROR", "No GPS provider found!");  
-
 		}  
 		Log.i("PROVIDER ERROR", provider); 
 		manager.requestLocationUpdates(provider, 30*1000, 0, locationListener);
 		Log.d("myservice", "onClick: starting service"); 
 		super.onStart(intent, startId);
-
-
 	}
 	@Override
 	public void onDestroy() {
 		Log.d("myservice", "onClick: stop service"); 
 		manager.removeUpdates(locationListener);
-
-
-
 		super.onDestroy();
 	}
 	//连接数据库
@@ -266,8 +237,6 @@ public class PushTreasureService extends Service{
 
 		DBHelper helper=new DBHelper(PushTreasureService.this, "default.db", null, 1);
 		SQLiteDatabase defaultdb=helper.getReadableDatabase();
-
-		
 		ModelDaoImp mdi = new ModelDaoImp(defaultdb);
 		String userId = mdi.getUserConfiguration().getLoginUser();
 		if (userId.equals("default")) {

@@ -6,16 +6,16 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class User implements Serializable{
 
-	long userId;  //·þÎñÆ÷·µ»Ø
-	int gender;//ÐÔ±ð£¬1£ºÄÐ£¬0£ºÅ®
+	long userId;  //用户id，为注册时间
+	int gender;//性别，1为男，0为女
 	String username;
 	String password;
-	String picture;  //Í·ÏñÂ·¾¶
+	String picture;  //用户头像路径
 	String birthday;  
 	String hobby;
-	String friends;  //ºÃÓÑÁÐ±í£¬Ö®¼äÓÃ·ÖºÅ¸ô¿ª
+	String friends;  //用户好友列表
 	long lastChangeTime;
-	int operation;//0£ºÒÑÍ¬²½1£ºÐÂÔö2£ºÐÞ¸Ä3£ºÉ¾³ý
+	int operation;//对用户信息的操作，0为无操作，1为添加，2为修改
 
 	public User(){
 		

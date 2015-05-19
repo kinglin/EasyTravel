@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		//´´½¨ÓÃ»§±í,ÕâÀïÒª¶ÔÆäËûµÄ±í½øÐÐ³õÊ¼»¯´´½¨
+		//首次创建数据库时创建表
 	    String configuration_table="create table configuration(configurationId long primary key,loginUser text,syncByWifi integer,trackOrNot integer,autoPush integer,info text,changed integer)";
 	    String user_table="create table user (userId long primary key,gender integer,username text,password text,picture text,birthday text,hobby text,friends text,lastChangeTime long,operation integer)"; 
 	    String note_table="create table note(noteId long primary key,time text,permission integer,weather integer,text text,title text,pictures text,voice text,locationx double,locationy double,video text,lastChangeTime long,operation integer)";
@@ -37,10 +37,12 @@ public class DBHelper extends SQLiteOpenHelper {
 	    db.execSQL(treasure_table); 
 	    db.execSQL(coin_table); 
 		
+	    //插入默认配置数据
 	    Configuration fconfiguration=new Configuration(1,"default",0,1,1,null,0);
 	    ModelDaoImp mdi = new ModelDaoImp(db);
 	    mdi.saveConfiguration(fconfiguration);
 	    
+	    //插入默认宝藏列表
 	    List<Treasure> treasures = new ArrayList<Treasure>();
 	    Treasure treasure1 = new Treasure(1, "2015-6-8"," dongjiu", 30.5203, 114.433, "dongjiu", 0);
 	    Treasure treasure2 = new Treasure(2, "2015-6-7","yunyuan hotel", 30.5203, 114.438, "yunyuan hotel", 0);

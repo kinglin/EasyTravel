@@ -6,19 +6,19 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Note implements Serializable{
 
-	long noteId;  //±£´æµÄÊ±¼ä
-	String time;  //±£´æµÄÊ±¼ä,ÒÔÃâ»ìÏý
-	int permission;  //1Îª¹«¿ª£¬0ÎªË½ÃÜ
-	int weather;  //1~4´ú±í²»Í¬µÄÌìÆø
-	String text;  //ÎÄ×Ö
-	String title; //±êÌâ
-	String pictures;  //Í¼Æ¬µÄÂ·¾¶£¬Ö®¼äÓÃ·ÖºÅ¸ô¿ª
-	String voice;  //ÓïÒôµÄÂ·¾¶
-	double locationx;  //¾­¶È
-	double locationy;  //Î³¶È
-	String video;  //ÊÓÆµµÄÂ·¾¶
-	long lastChangeTime;
-	int operation;//0£ºÒÑÍ¬²½1£ºÐÂÔö2£ºÐÞ¸Ä3£ºÉ¾³ý
+	long noteId;  //记事id，为记事创建时间
+	String time;  //记事创建时间
+	int permission;  //1为公开，0为隐私
+	int weather;  //1~4的天气状况
+	String text;  //记事文本
+	String title; //记事标题
+	String pictures;  //记事中图片路径
+	String voice;  //记事中语音保存路径
+	double locationx;  //经度
+	double locationy;  //纬度
+	String video;  //视频保存路径
+	long lastChangeTime;//记事最近修改时间
+	int operation;//0为无操作，1为添加，2为修改，4为删除
 	
 	public Note(long noteId, String time, int permission, int weather, String text, String title,String pictures, String voice, double locationx, double locationy, String video, long lastChangeTime, int operation) {
 		this.noteId=noteId;

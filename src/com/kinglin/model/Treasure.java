@@ -2,15 +2,12 @@ package com.kinglin.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Treasure implements Serializable{
-
-	/**
-	 * 
-	 */
 	
-	long treasureId;  //±¦²Ø²úÉúÊ±¼ä
-	String time;  //±¦²Ø²úÉúÊ±¼ä£¬ºÍidÇø·Ö¿ª
-	String content;  //±¦²ØÄÚÈÝ
+	long treasureId;  //宝藏id
+	String time;  //宝藏发现时间
+	String content;  //宝藏内容
 	String title;
 	public String getTitle() {
 		return title;

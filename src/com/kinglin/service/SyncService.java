@@ -38,6 +38,7 @@ public class SyncService extends Service {
 		
 		super.onCreate();
 		
+		//定时器，每两分钟进行一次网络同步
 		Timer timer = new Timer();
 		timer.schedule(new Work(), 0, 2*60*1000);
 	}
@@ -65,6 +66,7 @@ public class SyncService extends Service {
 		}
 	}
 	
+	//判断网络是否可用
 	public static boolean isNetworkAvailable(Context context) {   
         ConnectivityManager cm = (ConnectivityManager) context   
                 .getSystemService(Context.CONNECTIVITY_SERVICE);   
@@ -84,11 +86,11 @@ public class SyncService extends Service {
 	
 	public SQLiteDatabase dbInit() {
 
-		//��������default���ݿ⣬��һ��ʹ�û��ʼ������ʵ���Ӧ�ı�
+		//进入default数据库
 		DBHelper helper=new DBHelper(getApplicationContext(), "default.db", null, 1);
 		SQLiteDatabase defaultdb=helper.getWritableDatabase();
 
-		//��ѯdefault���ݿ���Configuration���loginUser,������Ӧ��db
+		//通过default数据库拿到当前使用的用户数据库
 		ModelDaoImp mdi = new ModelDaoImp(defaultdb);
 		String userId = mdi.getUserConfiguration().getLoginUser();
 		if (userId.equals("default")) {
@@ -100,6 +102,7 @@ public class SyncService extends Service {
 		}
 	}
 	
+	//判断当前网络连接状况
 	public int netWorkState(Context context) {
 		int  netState=4;
 		ConnectivityManager connectivity = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE); 

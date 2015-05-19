@@ -25,8 +25,8 @@ public class ModelDaoImp implements ModelDao {
 		this.db = db;
 	}
 
-	//»ñµÃÓÃ»§µÄÉèÖÃÎÄ¼þ
-	public Configuration getUserConfiguration() {//»ñµÃµ±Ç°µÄÅäÖÃÐÅÏ¢£¬ÒÔConfiguration¶ÔÏó·µ»Ø
+	
+	public Configuration getUserConfiguration() {
 
 		Configuration configuration = null;
 		Cursor cursor=db.rawQuery("select * from configuration where configurationId=?",new String[]{"1"});//Ä¬ÈÏConfiguration±íÎ¨Ò»¼ÇÂ¼µÄconfigurationIdÎª1£¬¿ÉÒÔ¸Ä
@@ -45,7 +45,7 @@ public class ModelDaoImp implements ModelDao {
 	}
 
 	@Override
-	public void setUserConfiguration(Configuration configuration) {//½«´«ÈëµÄconfiguration¶ÔÏó±£´æµ½±í
+	public void setUserConfiguration(Configuration configuration) {
 		db.execSQL("update configuration set loginUser=?,syncByWifi=?,trackOrNot=?,autoPush=?,info=?,changed=? where configurationId=?",
 				new Object[]{configuration.getLoginUser(),configuration.getSyncByWifi(),configuration.getTrackOrNot(),configuration.getAutoPush(),configuration.getInfo(),configuration.getChanged(),configuration.getConfigurationId()});
 	}
@@ -58,14 +58,14 @@ public class ModelDaoImp implements ModelDao {
 	}
 
 	@Override
-	public void addNote(Note note) {//Ìí¼ÓÒ»Ìõ¼ÇÊÂ¼ÇÂ¼
+	public void addNote(Note note) {
 		db.execSQL("insert into note(noteId,time,permission,weather,text,title,pictures,voice,locationx,locationy,video,lastChangeTime,operation) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
 				new Object[]{note.getNoteId(),note.getTime(),note.getPermission(),note.getWeather(),note.getText(),note.getTitle(),note.getPictures(),note.getVoice(),note.getLocationx(),note.getLocationy(),note.getVideo(),note.getLastChangeTime(),note.getOperation()});
 		
 	}
 
 	@Override
-	public List<Note> getAllNotes() {//²éÑ¯ËùÓÐ¼ÇÂ¼
+	public List<Note> getAllNotes() {
 		List<Note> notes=new ArrayList<Note>();
 		Cursor cursor=db.rawQuery("select * from note where operation<>4 order by noteId asc",null);
 		while (cursor.moveToNext()) {
@@ -95,14 +95,13 @@ public class ModelDaoImp implements ModelDao {
 
 
 	@Override
-	//¸ù¾Ý´«ÈëµÄnoteµÄnoteIdÉ¾³ý¼ÇÂ¼
 	public void deleteNote(Note note) {
 		db.execSQL("delete from note where noteId=?",
 				new Object[]{note.getNoteId()});
 	}
 	
 	@Override
-	public void updateNote(Note note) {//¸ù¾Ý´«ÈëµÄnoteµÄnoteId¸ü¸Ä¼ÇÂ¼
+	public void updateNote(Note note) {
 		db.execSQL("update note set time=?,permission=?,weather=?,text=?,pictures=?,voice=?,locationx=?,locationy=?,video=?,lastChangeTime=?,operation=? where noteId=?",
 				new Object[]{note.getTime(),note.getPermission(),note.getWeather(),note.getText(),note.getPictures(),note.getVoice(),note.getLocationx(),note.getLocationy(),note.getVideo(),note.getLastChangeTime(),2,note.getNoteId()});
 	}
@@ -133,7 +132,7 @@ public class ModelDaoImp implements ModelDao {
 		return notes.get(0);
 	}
 
-	//´«ÈëÓÃ»§id£¬µ½defaultÊý¾Ý¿âµÄuser±íÖÐ²éÕÒÊÇ·ñÓÐ¸ÃÓÃ»§´æÔÚ£¨´ËÊ±ÒÑ¾­ÔÚdefaultÊý¾Ý¿âÖÐ£©£¬Ã»ÓÐ·µ»Øfalse²¢²åÈë£¬ÓÐÔò·µ»Øtrue
+	
 	public boolean hasBeenLogedIn(long userId) {
 		Cursor cursor=db.rawQuery("select * from user where userId=?",
 				 new String[]{String.valueOf(userId)});
@@ -143,21 +142,19 @@ public class ModelDaoImp implements ModelDao {
 		return true;
 	}
 
-	//Õâ¸öº¯ÊýÐèÒªÂÞ¾êÍ¬Ñ§ºÍÁÖ²ßÍ¬Ñ§¹²Í¬Íê³É
-	//ÕâÀïÊÇ»ñµÃ¸ÃÓÃ»§ËùÓÐÊý¾ÝµÄidºÍ×îºóÐÞ¸ÄÊ±¼ä£¬²¢´ò°ü³Éjson·µ»Ø
+	
 	@Override
 	public JSONObject getAllDataSnapshot() {
 		return null;
 	}
 
-	//Õâ¸öº¯ÊýÐèÒªÂÞ¾êÍ¬Ñ§ºÍÁÖ²ßÍ¬Ñ§¹²Í¬Íê³É
-	//ÕâÀïÊÇ´«ÈëÐÂµÇÂ¼µÄÓÃ»§µÄËùÓÐÊý¾Ý£¬ÐèÒª½âÎöjson£¬È»ºó½«Êý¾Ý´æµ½Êý¾Ý¿â£¬±£´æ³É¹¦·µ»Øtrue
+	
 	@Override
 	public boolean saveNewUserAllData(JSONObject json_allUserData) {
 		try {
 			if (json_allUserData.getString("getResult").equals("yes")) {
 				
-				//ÕâÀï»ñÈ¡userÐÅÏ¢²¢±£´æ
+				
 				JSONObject json_user = json_allUserData.getJSONObject("user");
 				User user = new User(json_user.getLong("userId"), 
 						json_user.getInt("gender"), 
@@ -171,7 +168,7 @@ public class ModelDaoImp implements ModelDao {
 						json_user.getInt("operation"));
 				saveUser(user);
 				
-				//ÕâÀï»ñÈ¡configuration²¢±£´æ
+				
 				JSONObject json_conf = json_allUserData.getJSONObject("configuration");
 				Configuration configuration = new Configuration(
 						json_conf.getLong("configurationId"), 
@@ -183,25 +180,6 @@ public class ModelDaoImp implements ModelDao {
 						json_conf.getInt("changed"));
 				setUserConfiguration(configuration);
 				
-				
-				//ÕâÀï»ñÈ¡notes²¢±£´æ
-				
-//				if (!json_allUserData.isNull("routes")) {
-//					JSONArray jsonArray_routes = json_allUserData.getJSONArray("routes");
-//					JSONObject json_route = new JSONObject();
-//					Route route = new Route();
-//					for (int i = 0; i < jsonArray_routes.length(); i++) {
-//						json_route = jsonArray_routes.getJSONObject(i);
-//						
-//						route.setId(json_route.getLong("id"));
-//						route.setDate(json_route.getString("date"));
-//						route.setLatitude(json_route.getDouble("latitude"));
-//						route.setLongtitude(json_route.getDouble("longtitude"));
-//						route.setChanged(0);
-//						
-//						saveRoute(route);
-//					}
-//				}
 				
 				if (!json_allUserData.isNull("notes")) {
 					JSONArray jsonArray_notes = json_allUserData.getJSONArray("notes");
@@ -227,21 +205,6 @@ public class ModelDaoImp implements ModelDao {
 					saveAllNotes(notes);
 				}
 				
-				//ÕâÀï»ñÈ¡routes²¢±£´æ
-//				if (!json_allUserData.isNull("routes")) {
-//					JSONArray jsonArray_routes = json_allUserData.getJSONArray("routes");
-//					List<Route> routes = new ArrayList<Route>();
-//					for (int i = 0; i < jsonArray_routes.length(); i++) {
-//						JSONObject json_route = jsonArray_routes.getJSONObject(i);
-//						Route route = new Route(json_route.getLong("id"), 
-//								json_route.getDouble("latitude"), 
-//								json_route.getDouble("longtitude"),
-//								json_route.getString("date"),0);
-//						routes.add(route);
-//					}
-//					saveAllRoutes(routes);
-//				}
-				
 				if (!json_allUserData.isNull("routes")) {
 					JSONArray jsonArray_routes = json_allUserData.getJSONArray("routes");
 					JSONObject json_route = new JSONObject();
@@ -260,8 +223,6 @@ public class ModelDaoImp implements ModelDao {
 				}
 				
 				
-				
-				//ÕâÀï»ñÈ¡coins²¢±£´æ
 				if (!json_allUserData.isNull("coins")) {
 					JSONArray jsonArray_coins = json_allUserData.getJSONArray("coins");
 					List<Coin> coins = new ArrayList<Coin>();
@@ -277,7 +238,6 @@ public class ModelDaoImp implements ModelDao {
 				}
 				
 				
-				//ÕâÀï»ñÈ¡treasures²¢±£´æ
 				if (!json_allUserData.isNull("treasures")) {
 					JSONArray jsonArray_treasures = json_allUserData.getJSONArray("treasures");
 					List<Treasure> treasures = new ArrayList<Treasure>();
@@ -330,8 +290,6 @@ public class ModelDaoImp implements ModelDao {
 	}
 
 	
-	//Õâ¸öº¯ÊýÐèÒªÂÞ¾êÍ¬Ñ§ºÍÁÖ²ßÍ¬Ñ§¹²Í¬Íê³É
-	//ÕâÀïÊÇ´«ÈëÓÃ»§±¾µØÊý¾ÝºÍ·þÎñÆ÷Êý¾Ý²»Ò»ÑùµÄµØ·½£¬ÐèÒª½âÎöjson£¬È»ºó±£´æ£¬³É¹¦·µ»Øtrue
 	
 	public boolean saveUserChangedData(JSONObject json_userAllChangedData) {
 		return false;
@@ -352,8 +310,6 @@ public class ModelDaoImp implements ModelDao {
 	
 	@Override
 	public int getTreasureCount() {
-//		Cursor cursor=db.rawQuery("select * from treasure where isChecked=1",null);
-//		return cursor.getCount();
 		return getAllTreasure().size();
 		
 	}
@@ -403,8 +359,6 @@ public class ModelDaoImp implements ModelDao {
 	
 
 	@Override
-	
-	//Õâ¸öº¯Êý»¹Ã»×ö
 	public JSONObject getAllChangedData() {
 		
 		

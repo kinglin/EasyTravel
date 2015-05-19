@@ -454,7 +454,6 @@ public class UserInformationActivity extends Activity {
 				month = Integer.parseInt(etUserInfoBirthday.getText().toString().substring(5, 7)) - 1;
 				day = Integer.parseInt(etUserInfoBirthday.getText().toString().substring(8, 10));
 			}
-			
 			DatePickerDialog dpdlg = new DatePickerDialog(UserInformationActivity.this,
 					new DateSelectListener(), year, month, day);
 			dpdlg.getDatePicker().setMaxDate(calendar.getTimeInMillis());	//设置最大日期为当天
@@ -468,11 +467,9 @@ public class UserInformationActivity extends Activity {
 		@Override
 		public void onDateSet(DatePicker view, int year, int monthOfYear,
 				int dayOfMonth) {
-			
 			mYear = year;
 			mMonth = monthOfYear;
 			mDay = dayOfMonth;
-			
 			etUserInfoBirthday.setText(new StringBuilder().append(mYear).append(
 					"-"+((mMonth+1) < 10 ? "0"+(mMonth+1) : (mMonth+1))).append(
 					"-"+((mDay < 10) ? "0"+mDay : mDay)));
@@ -598,8 +595,6 @@ public class UserInformationActivity extends Activity {
 			ModelDaoImp mdi = new ModelDaoImp(db);
 			if (mdi.updateUser(user)) {
 				Toast.makeText(getApplicationContext(), "save success", 500).show();
-//				SyncThread syncThread = new SyncThread();
-//				syncThread.start();
 			}else {
 				Toast.makeText(getApplicationContext(), "save failed", 500).show();
 			}
@@ -608,20 +603,6 @@ public class UserInformationActivity extends Activity {
 		}
 	}
 	
-//	class SyncThread extends Thread{
-//		public void run(){
-//			ServerConnection sc =  new ServerConnection(db);
-//			try {
-//				sc.syncData();
-//			} catch (ClientProtocolException e) {
-//				e.printStackTrace();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			} catch (JSONException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	}
 	
 	//点击返回按钮的事件响应
 	@Override

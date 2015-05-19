@@ -1,16 +1,14 @@
 package com.kinglin.model;
 
-import android.R.integer;
-
 public class Configuration {
 
-	long configurationId;//id¹Ì¶¨£¬ÒòÎªÖ»ÓÐÒ»¸ö¼ÇÂ¼
-	String loginUser;  //µ±Ç°ÓÃ»§id£¬ÅÐ¶ÏÊÇ·ñÊÇµÇÂ½×´Ì¬,defaultÎªÎ´µÇÂ¼£¬ÆäËûÎªµÇÂ½
-	int syncByWifi;  //1ÎªwifiÏÂÍ¬²½£¬0Îª²»Í¬²½
-	int trackOrNot;  //1ÎªÂ·¾¶¸ú×Ù£¬0Îª²»¸ú×Ù
-	int autoPush;
+	long configurationId;//用户配置id
+	String loginUser;  //当前登陆用户的id
+	int syncByWifi;  //1为wifi下同步
+	int trackOrNot;  //1为开启路径跟踪
+	int autoPush;   //1为开启宝藏推送
 
-	String info;  //Èí¼þÏà¹ØÐÅÏ¢
+	String info;  //存放软件信息
 
 	int changed;
 	

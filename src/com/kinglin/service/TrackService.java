@@ -55,17 +55,14 @@ public class TrackService extends Service{
 
 			@Override
 			public void onStatusChanged(String provider, int status, Bundle extras) {
-
 			}
 
 			@Override
 			public void onProviderEnabled(String provider) {
-
 			}
 
 			@Override
 			public void onProviderDisabled(String provider) {
-
 			}
 
 			@Override
@@ -74,23 +71,15 @@ public class TrackService extends Service{
 					Log.d("SuperMap" ,  "Location changed : Lat: "   
 							+ location.getLatitude() + " Lng: "   
 							+ location.getLongitude());  
-
 					insertLocation(location);
 
 					Log.d("SuperMap" ,  "INSERT SUCCESS! "   ); 
-
 				}
 				else{
 					Log.d("SuperMap" ,  "Location null "   ); 
 				}  
-
-
 			}
-
-
 		};
-
-
 		Log.d("myservice", "onClick: create service"); 
 
 		super.onCreate();
@@ -120,17 +109,16 @@ public class TrackService extends Service{
 	public void onDestroy() {
 		Log.d("myservice", "onClick: stop service"); 
 		manager.removeUpdates(locationListener);
-
 		super.onDestroy();
 	}
 	//连接数据库
 	public SQLiteDatabase dbInit() {
 
-		//��������default���ݿ⣬��һ��ʹ�û��ʼ������ʵ���Ӧ�ı�
+		//进入default数据库
 		DBHelper helper=new DBHelper(TrackService.this, "default.db", null, 1);
 		SQLiteDatabase defaultdb=helper.getWritableDatabase();
 
-		//��ѯdefault���ݿ���Configuration���loginUser,������Ӧ��db
+		//通过default数据库拿到当前的用户
 		ModelDaoImp mdi = new ModelDaoImp(defaultdb);
 		String userId = mdi.getUserConfiguration().getLoginUser();
 		if (userId.equals("default")) {

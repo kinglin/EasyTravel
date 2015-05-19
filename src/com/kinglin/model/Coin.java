@@ -2,10 +2,10 @@ package com.kinglin.model;
 
 public class Coin {
 
-	long coinId;  //»ý·Ö²úÉúÊ±¼ä
-	String time;  //»ý·Ö²úÉúÊ±¼ä£¬ºÍidÇø·Ö¿ª
-	int grade;  //·ÖÖµ
-	String content;  //»ý·ÖÄÚÈÝ
+	long coinId;  //积分项的id
+	String time;  //积分获取时间
+	int grade;  //积分分值
+	String content;  //积分内容
 	
 	public Coin() {
 	}

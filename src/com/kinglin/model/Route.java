@@ -2,9 +2,9 @@ package com.kinglin.model;
 
 public class Route {
 
-	long id;  //¼ÇÂ¼µÄÊ±¿Ì
-	double latitude;  //¾­¶È
-	double longtitude;  //Î³¶È
+	long id;  //路径id
+	double latitude;  //经度
+	double longtitude;  //纬度
 	String date;
 	int changed;
 	
