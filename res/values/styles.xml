@@ -1,0 +1,58 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    <!--  给popupwindow添加样式 -->
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popwin_show</item>
+        <item name="android:windowExitAnimation">@anim/popwin_hide</item>
+    </style>
+    
+    <style name="popwin_top_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popwin_top_show</item>
+        <item name="android:windowExitAnimation">@anim/popwin_top_hide</item>
+    </style>
+    
+    <style name="popwin_bottom_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popwin_bottom_show</item>
+        <item name="android:windowExitAnimation">@anim/popwin_bottom_hide</item>
+    </style>
+    
+    <style name="popwin_bigpic_anim_style">
+        <item name="android:windowEnterAnimation">@anim/left_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/left_bottom_out</item>
+    </style>
+    
+    <!--  橙色背景白色字体button样式 -->
+    <style name="btn_bg_style">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
+    
+    <!--  登陆页面和注册对话框中的EditText样式 -->
+    <style name="et_signup_bg_style">
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@null</item>
+    </style>
+    
+
+</resources>

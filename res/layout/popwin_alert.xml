@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+    <TextView
+        android:id="@+id/tv_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_alert"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" >
+         
+        <Button
+            android:id="@+id/btn_alertNo"
+	        android:layout_width="90dp"
+	        android:layout_height="wrap_content"
+	        style="@style/btn_bg_style"
+	        android:text="No" />
+    
+	    <Button
+	        android:id="@+id/btn_alertYes"
+	        android:layout_width="90dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="30dp"
+	        style="@style/btn_bg_style"
+	        android:text="Yes" />
+        
+    </LinearLayout>
+    
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status_spinner">
+        <item >public</item>
+        <item >private</item>
+    </string-array>
+    
+</resources>

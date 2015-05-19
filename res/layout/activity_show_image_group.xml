@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_bg"
+    tools:context=".ShowImageGroupActivity" >
+
+    <GridView
+        android:id="@+id/group_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="18dip"
+        android:gravity="center"
+        android:verticalSpacing="20dip"
+        android:columnWidth="90dip"
+        android:numColumns="2" >
+        
+    </GridView>
+
+</RelativeLayout>

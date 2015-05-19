@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+   		android:layout_marginBottom="10dp" >
+   		
+        <View
+            android:id="@+id/v_line"
+            android:layout_width="3dp"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="55dp"
+	        android:background="#000000" />
+        
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="10dp"
+	        android:layout_height="10dp"
+	        android:layout_centerVertical="true"
+	        android:layout_alignRight="@+id/v_line"
+	        android:layout_marginRight="-4dp"
+	        android:background="@drawable/img_dot" />
+        
+        <TextView
+            android:id="@+id/tv_timeLineTime"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@+id/img"
+	        android:layout_marginLeft="6dp"
+	        android:textColor="#FC6802"
+	        android:text="4:26" />
+        
+        <TextView
+            android:id="@+id/tv_timeLineContent"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toLeftOf="@+id/img"
+	        android:layout_marginRight="8dp"
+	        android:background="@drawable/tv_content_bg"
+	        android:layout_marginLeft="50dp"
+	        android:maxLines="3"
+	        android:ellipsize="end"
+	        android:textSize="20dp"
+	        android:textColor="#5296C5" />
+        
+        <ImageView
+            android:id="@+id/iv_timeLineContent"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_alignRight="@+id/tv_timeLineContent"
+	        android:scaleType="centerCrop" />
+        
+    </RelativeLayout>
+    
+
+</RelativeLayout>

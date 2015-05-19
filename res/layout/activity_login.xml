@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/activity_bg"
+    tools:context=".LoginActivity" >
+    
+    <!-- <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_below="@+id/tv_login"
+        android:layout_marginTop="15dp"
+        android:background="#9C9C9C" /> -->
+        
+    <ImageView
+        android:id="@+id/iv_turnToSetting"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentRight="true"
+    	android:layout_marginRight="20dp"
+    	android:layout_marginTop="10dp"
+        android:src="@drawable/ic_setting" />
+    
+    <TextView
+	        android:id="@+id/tv_login"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/ll_login"
+	        android:textSize="35dp"
+	        android:layout_marginLeft="40dp"
+	        android:layout_marginBottom="30dp"
+	        android:textStyle="bold"
+	        android:text="Log in" />
+    
+    <LinearLayout
+        android:id="@+id/ll_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+	        android:background="@drawable/llayout_border"
+        	android:orientation="vertical" >
+         
+	        <EditText
+	            android:id="@+id/et_loginUserName"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            style="@style/et_signup_bg_style"
+	            android:hint="username" />
+	        
+	        <View
+		        android:layout_width="match_parent"
+		        android:layout_height="1dip"
+		        android:layout_below="@+id/tv_login"
+		        android:background="#9C9C9C" />
+	        
+	        <EditText
+	            android:id="@+id/et_loginPassword"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_vertical"
+	            style="@style/et_signup_bg_style"
+	            android:hint="password"
+	            android:inputType="textPassword" />
+	        
+	    </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="50dp"
+        	android:orientation="horizontal"
+        	android:paddingBottom="10dp" >
+             
+            <Button
+	            android:id="@+id/btn_login"
+	            android:layout_width="0dp"
+	        	android:layout_height="wrap_content"
+	        	android:layout_weight="2"
+	        	style="@style/btn_bg_style"
+	        	android:text="Log In" />
+            
+            <Button
+	            android:id="@+id/btn_signup"
+	            android:layout_width="0dp"
+	       		android:layout_height="wrap_content"
+	       		android:layout_weight="0.9"
+	       		android:layout_marginLeft="5dp"
+	       		style="@style/btn_bg_style"
+	       		android:text="Sign up" />
+            
+        </LinearLayout>
+        
+        <!-- <LinearLayout
+            android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="30dp"
+        	android:orientation="horizontal" >
+	        
+            <Button
+                android:id="@+id/btn_qqlogin"
+                android:layout_width="0dp"
+        		android:layout_height="wrap_content"
+        		android:layout_weight="0.93"
+        		android:background="@drawable/btn_border_style"
+				android:textStyle="bold"
+				android:textSize="20dp"
+        		android:text="QQ" />
+            
+            <Button
+                android:id="@+id/btn_weiboLogin"
+                android:layout_width="0dp"
+        		android:layout_height="wrap_content"
+        		android:layout_weight="1"
+        		android:layout_marginLeft="20dp"
+        		android:background="@drawable/btn_border_style"
+				android:textStyle="bold"
+				android:textSize="20dp"
+        		android:text="Weibo" />
+            
+        </LinearLayout> -->
+        
+    </LinearLayout>
+    
+
+</RelativeLayout>

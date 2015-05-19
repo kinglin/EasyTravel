@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/activity_bg"
+    tools:context=".SettingActivity"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Settings"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        android:src="@drawable/ic_line2" />
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+	    android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:text="sync by wifi"
+	        android:textSize="20dp" />
+        
+        <Switch
+            android:id="@+id/switch_syncByWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+            android:textOff="off"
+            android:textOn="On" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:text="route tracker"
+	        android:textSize="20dp" />
+        
+        <Switch
+            android:id="@+id/switch_routeTracker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+            android:textOff="off"
+            android:textOn="On" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:text="anto push"
+	        android:textSize="20dp" />
+        
+        <Switch
+            android:id="@+id/switch_autoPush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+            android:textOff="off"
+            android:textOn="On" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp" >
+        
+        <TextView
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="about us"
+	        android:textSize="20dp" />
+        
+        <ImageButton
+            android:id="@+id/ibtn_settingExpandAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:src="@drawable/ic_down" />
+        
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="15dp"
+	    android:layout_marginRight="15dp" >
+    
+	    <LinearLayout
+	        android:id="@+id/ll_settingAboutUs"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:orientation="vertical"
+	        android:visibility="gone" >
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Function of this system"
+		        android:textColor="#B3B3B3"
+		        android:textSize="18dp" />
+	        
+	        <TextView
+	            android:id="@+id/tv_settingFunction"
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="#B3B3B3"
+		        android:text="Function of this system" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:textColor="#B3B3B3"
+		        android:text="Version of this system"
+		        android:textSize="18dp" />
+	        
+	        <TextView
+	            android:id="@+id/tv_settingVersion"
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="#B3B3B3"
+		        android:text="Version of this system" />
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:textColor="#B3B3B3"
+		        android:text="Developers of this system"
+		        android:textSize="18dp" />
+	        
+	        <TextView
+	            android:id="@+id/tv_settingDevelopers"
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textColor="#B3B3B3"
+		        android:text="Developers of this system" />
+	        
+	    </LinearLayout>
+    
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="35dp"
+	    android:layout_marginRight="35dp"
+        android:layout_marginBottom="40dp" >
+        
+        <Button
+            android:id="@+id/btn_logout"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        style="@style/btn_bg_style"
+	        android:text="Log out" />
+        
+    </RelativeLayout>
+    
+    
+
+</LinearLayout>

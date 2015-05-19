@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="25dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="5dp"
+    android:background="@drawable/location_tips" >
+
+    <TextView
+        android:id="@+id/poiName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:maxWidth="150dp"
+        android:singleLine="true"
+        android:text="Treasure"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- <TextView android:id="@+id/poiTime" android:layout_width="wrap_content" android:layout_height="22dp" android:singleLine="true" android:gravity="center_vertical" android:maxWidth="150dp" android:text="" /> -->
+
+</LinearLayout>

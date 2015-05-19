@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button
+        android:id="@+id/menu_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_color_selector"
+        android:text="Delete" />
+    
+    <View
+        android:layout_width="match_parent" 
+	    android:layout_height="1dp"
+	    android:background="#FC6802" />
+    
+    <Button
+        android:id="@+id/menu_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_color_selector"
+        android:text="Edit" />
+    
+    <View
+        android:layout_width="match_parent" 
+	    android:layout_height="1dp"
+	    android:background="#FC6802" />
+    
+    <Button
+        android:id="@+id/menu_shareTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_color_selector"
+        android:text="Share To..." />
+    
+    <View
+        android:layout_width="match_parent" 
+	    android:layout_height="1dp"
+	    android:background="#FC6802" />
+    
+    <Button
+        android:id="@+id/menu_turnToMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_color_selector"
+        android:text="Turn To Map" />
+    
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weibo_oauth_regiseter">Authorization</string>
+    <string name="website">http://www.mob.com</string>
+    <string name="weibo_upload_content">分享图片</string>
+    <string name="wechat_client_inavailable">Wechat client not exists or the version is too low</string>
+    <string name="qq_client_inavailable">Mobile QQ client not exists or the version is too low</string>
+    
+	<string name="sinaweibo">Sina Weibo</string>
+	<string name="tencentweibo">Tencent Weibo</string>
+	<string name="qzone">QZone</string>
+	<string name="wechat">Wechat</string>
+	<string name="wechatmoments">Wechat Moments</string>
+	<string name="wechatfavorite">Wechat Favorite</string>
+	<string name="sohumicroblog">Sohu Microblog</string>
+	<string name="neteasemicroblog">Netease Microblog</string>
+	<string name="evernote">Evernote</string>
+	<string name="qq">QQ</string>
+	<string name="vkontakte">VK</string>
+	<string name="bluetooth">Bluetooth</string>
+
+	<string name="share_to_qzone">Share To QZone</string>
+	<string name="share_to_qq">Share To QQ</string>
+	<string name="share_to_qzone_default">Shared from %s</string>
+	<string name="use_login_button">use login button instead</string>
+</resources>

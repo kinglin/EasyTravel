@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/popwin"
+    android:paddingTop="17dp"
+    android:paddingBottom="13dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp" >
+    
+    <ImageView
+        android:id="@+id/iv_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_sun" />
+    
+    <ImageView
+        android:id="@+id/iv_cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_sun"
+        android:layout_toRightOf="@+id/iv_sun"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_cloud" />
+    
+    <ImageView
+        android:id="@+id/iv_rain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iv_sun"
+        android:layout_below="@+id/iv_sun"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_rain" />
+    
+    <ImageView
+        android:id="@+id/iv_snow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_rain"
+        android:layout_toRightOf="@+id/iv_rain"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_snow" />
+    
+
+</RelativeLayout>

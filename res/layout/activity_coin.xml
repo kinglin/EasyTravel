@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/activity_bg"
+    tools:context=".CoinActivity" >
+
+    <RelativeLayout
+        android:id="@+id/rl_coinTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageButton
+            android:id="@+id/ibtn_coinReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:src="@drawable/ic_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Coin Details"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_coinTitle"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        android:src="@drawable/ic_line2" />
+
+    <RelativeLayout
+        android:id="@+id/rl_coinExpandRules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_coinTitle"
+        android:layout_marginTop="30dp" >
+
+        <ImageButton
+            android:id="@+id/ibtn_coinExpandRules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:src="@drawable/ic_down" />
+
+        <TextView
+            android:id="@+id/tv_coinObtainRules"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/ibtn_coinExpandRules"
+            android:text="coin obtain rules"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+	    android:layout_height="110dp"
+	    android:layout_below="@+id/rl_coinExpandRules" >
+        
+        <LinearLayout
+	        android:id="@+id/ll_coinObtainRules"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_marginTop="-110dp"
+	        android:padding="7dp" >
+	        
+	        <View
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:background="#B3B3B3"
+	            android:layout_marginBottom="5dp" />
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#B3B3B3"
+	            android:text="send a private note   +10      send a public note   +20" />
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#B3B3B3"
+	            android:text="every item to note   +1        record every 2 km   +1" />
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#B3B3B3"
+	            android:text="share to other   +30             new user sign up   +30" />
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#B3B3B3"
+	            android:text="obtain a text   -200             obtain a snack   -500" />
+	
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#B3B3B3"
+	            android:text="obtain a book   -800             obtain a ticket   -2000" />
+	        
+	        <View
+	            android:layout_width="match_parent"
+	            android:layout_height="2dp"
+	            android:background="#B3B3B3"
+	            android:layout_marginTop="5dp" />
+	        
+	    </LinearLayout>
+        
+    </LinearLayout>
+    
+    <ListView
+        android:id="@+id/lv_coinDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_coinExpandRules"
+        android:layout_marginTop="3dp"
+        android:divider="@null" >
+        
+    </ListView>
+
+
+</RelativeLayout>

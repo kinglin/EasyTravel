@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_showNote"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/activity_bg"
+    tools:context=".ShowNoteActivity" >
+
+    <ListView
+        android:id="@+id/lv_timeLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:divider="@null"
+        android:scrollbars="none"  >
+        
+    </ListView>
+    
+    <View
+        android:layout_width="3dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="55dp"
+        android:background="#000000" />
+    
+    <ImageButton
+        android:id="@+id/ibtn_turn_to_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#00000000"
+        android:src="@drawable/ic_plus" />
+    
+    <ImageView
+        android:id="@+id/iv_fingerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/ic_finger" />
+    
+    <TextView
+        android:id="@+id/tv_fingerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_fingerRight"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="#FC6802"
+        android:text="flip to map" />
+    
+    <ImageView
+        android:id="@+id/iv_fingerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_fingerLeft"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_finger" />
+    
+    <TextView
+        android:id="@+id/tv_fingerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:textSize="20dp"
+        android:textColor="#FC6802"
+        android:text="flip to userInfo" />
+
+</RelativeLayout>
