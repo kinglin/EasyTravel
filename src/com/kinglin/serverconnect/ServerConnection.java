@@ -29,7 +29,7 @@ public class ServerConnection {
 
 	SQLiteDatabase db;
 	
-	String baseUrl = "http://115.156.249.19:9000/App";
+	String baseUrl = "http://192.168.1.109:9000/App";
 	
 	public ServerConnection() {
 	}

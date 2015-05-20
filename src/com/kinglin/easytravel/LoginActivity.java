@@ -79,8 +79,6 @@ public class LoginActivity extends Activity {
 		
 		ivTurnToSetting.setOnClickListener(new TurnToSettingClickListener());
 		btnLogin.setOnClickListener(new LoginClickListener());
-		//btnQQLogin.setOnClickListener(new OtherLoginClickListener());
-		//btnWeiboLogin.setOnClickListener(new OtherLoginClickListener());
 		btnSignUp.setOnClickListener(new SignUpBtnClickListener());
 		
 		View.OnTouchListener mOnTouchListener = new View.OnTouchListener() {
@@ -113,8 +111,6 @@ public class LoginActivity extends Activity {
 		etLoginUserName = (EditText) findViewById(R.id.et_loginUserName);
 		etLoginPassword = (EditText) findViewById(R.id.et_loginPassword);
 		btnLogin = (Button) findViewById(R.id.btn_login);
-		//btnQQLogin = (Button) findViewById(R.id.btn_qqlogin);
-		//btnWeiboLogin = (Button) findViewById(R.id.btn_weiboLogin);
 		btnSignUp = (Button) findViewById(R.id.btn_signup);
 	}
 	
@@ -148,47 +144,6 @@ public class LoginActivity extends Activity {
 			}
 		}
 	}
-	
-	
-	/*private class OtherLoginClickListener implements OnClickListener{
-
-		@Override
-		public void onClick(View v) {
-			AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-			View view = LayoutInflater.from(LoginActivity.this).inflate(R.layout.other_login_dlg, null);
-			builder.setView(view);
-			
-			final EditText etOtherLoginUsername= (EditText) view.findViewById(R.id.et_otherLoginUsername);
-			final EditText etOtherLoginPassword = (EditText) view.findViewById(R.id.et_otherLoginPassword);
-			
-			if (v.getId() == R.id.btn_qqlogin) {
-				builder.setTitle("QQ");
-			}
-			else if(v.getId() == R.id.btn_weiboLogin){
-				builder.setTitle("Weibo");
-			}
-				
-			builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-				
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					
-					String username = etOtherLoginUsername.getText().toString();
-					String password = etOtherLoginPassword.getText().toString();
-					Toast.makeText(LoginActivity.this, username+","+password, Toast.LENGTH_SHORT).show();
-				}
-			});
-			builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					
-				}
-			});
-			
-			builder.show();
-			
-		}	
-	}*/
 	
 	//点击注册按钮的事件响应
 	private class SignUpBtnClickListener implements OnClickListener{
@@ -359,8 +314,7 @@ public class LoginActivity extends Activity {
 		}
 	}
 	
-	//鏉╂瑦妲搁柦鍫濐嚠缁楊兛绔村▎鈥虫躬鐠囥儲澧滈張杞扮瑐閻у妾伴惃鍕暏閹达拷
-	//閸氭垶婀囬崝鈥虫珤鐠囬攱鐪伴懢宄板絿閻€劍鍩涢幍锟芥箒閻ㄥ嫪淇婇幁锟介悞璺烘倵娣囨繂鐡ㄩ崚鐗堟拱閸︾増鏆熼幑顔肩氨閿涘苯鑻熸潪顒�煂UserInformationActivity
+	
 	public class GetAllUserDataThread extends Thread{
 		
 		long userId;
@@ -398,7 +352,6 @@ public class LoginActivity extends Activity {
 					    		&& (!isServiceRunning(getApplicationContext(), "com.kinglin.service.TrackService"))) {
 							Intent serviceintent = new Intent(getApplicationContext(),TrackService.class);
 							startService(serviceintent);
-							Toast.makeText(getApplicationContext(), "TrackService start", 100);
 						}
 					    
 					    if (mdi.getUserConfiguration().getAutoPush() == 0 
@@ -409,22 +362,20 @@ public class LoginActivity extends Activity {
 					    		&& (!isServiceRunning(getApplicationContext(), "com.kinglin.service.PushTreasureService"))) {
 							Intent serviceintent = new Intent(getApplicationContext(),PushTreasureService.class);
 							startService(serviceintent);
-							Toast.makeText(getApplicationContext(), "PushTreasureService start", 100);
 						}
 					    
 					    if (mdi.getUserConfiguration().getSyncByWifi() == 1) {
 					    	Intent serviceintent = new Intent(getApplicationContext(),SyncService.class);
 							startService(serviceintent);
-							Toast.makeText(getApplicationContext(), "SyncService start", 100);
 						}
 					    
 					    userdb.close();
 					    
-					    helper=new DBHelper(getApplicationContext(), "default.db", null, 1);
-					    SQLiteDatabase defaultdb=helper.getWritableDatabase();
-					    mdi = new ModelDaoImp(defaultdb);
-					    mdi.saveUser(user);
-					    defaultdb.close();
+//					    DBHelper helper1=new DBHelper(getApplicationContext(), "default.db", null, 1);
+//					    SQLiteDatabase mdefaultdb=helper1.getWritableDatabase();
+//					    ModelDaoImp mdi1 = new ModelDaoImp(mdefaultdb);
+//					    mdi1.saveUser(user);
+//					    mdefaultdb.close();
 					    
 					    Intent intent = new Intent(getApplicationContext(),UserInformationActivity.class);
 					    intent.putExtra("userLogin", (Serializable)user);
@@ -435,8 +386,6 @@ public class LoginActivity extends Activity {
 					msg.arg1 = GET_USER_DATA_FAILED;
 					myHandler.sendMessage(msg);
 				}
-//				msg.arg1 = GET_USER_DATA_SUCCESS;
-//				myHandler.sendMessage(msg);
 			} catch (IOException | JSONException e) {
 				e.printStackTrace();
 			}
@@ -464,8 +413,6 @@ public class LoginActivity extends Activity {
 	}
 	
 	
-	//鏉╂瑦妲搁柦鍫濐嚠閺囧墽绮￠崷銊嚉閹靛婧�稉濠勬闂勫棜绻冮惃鍕暏閹达拷
-	//娴肩姴鍙嗛惃鍕嚉閻€劍鍩涢幍锟芥箒娣団剝浼呴惃鍒琩閸滃本娓堕崥搴濇叏閺�妞傞梻杈剧礉娴犲孩婀囬崝鈩冪湴閼惧嘲褰囩憰浣锋叏閺�湱娈戦幎濠傚敶鐎圭懓鑻熺�妯哄煂閺佺増宓佹惔鎿勭礉閻掕泛鎮楁潪顒�煂UserInformationActivity
 	public class GetUserChangedDataThread extends Thread{
 		long userId;
 		JSONObject json_userAllDataSnapshot;
@@ -513,29 +460,15 @@ public class LoginActivity extends Activity {
 				break;
 			case LOGIN_SUCCESS:
 				Toast.makeText(getApplicationContext(), "login success", 1000).show();
-//				progressDialog = new ProgressDialog(getApplicationContext());
-//				progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//				progressDialog.setTitle("login success");
-//				progressDialog.setMessage("getting your data");
-//				progressDialog.setIcon(R.drawable.ic_cloud);
-//				progressDialog.setIndeterminate(false);
-//				progressDialog.setCancelable(true);
-//				progressDialog.show();
 				break;
 			case LOGIN_FAILED:
 				Toast.makeText(getApplicationContext(), (CharSequence) msg.obj, 1000).show();
 				break;
 			case GET_USER_DATA_SUCCESS:
 				Toast.makeText(getApplicationContext(), "get user data success", 2000).show();
-//				if (progressDialog!=null) {
-//					progressDialog.cancel();
-//				}
 				break;
 			case GET_USER_DATA_FAILED:
 				Toast.makeText(getApplicationContext(), "get user data failed", 1000).show();
-//				if (progressDialog!=null) {
-//					progressDialog.cancel();
-//				}
 				break;
 			default:
 				break;
